@@ -138,6 +138,9 @@ public class store
 	public void update(Connection conn) throws SQLException
 	{
 		int ch1;
+		char ans1;
+		do
+		{
 		System.out.println("WHich item do you want to update");
 		System.out.println("1:quantity");
 		System.out.println("2:price");
@@ -203,7 +206,11 @@ public class store
 		default:
 			System.out.println("Sorry you enter invalid choice");
 			break;
-		}	
+		}
+			System.out.println("do you want Update another data ");
+		System.out.println("Enter 'Y' for yes & 'N' for no");
+		 ans1=sc.next().charAt(0);
+		}while(ans1=='y'|| ans1=='Y');
 	  }
 	// Method to view a specific product by its ID
 	public void row_view(Connection conn) throws SQLException
